@@ -127,6 +127,7 @@ body {
 #popup-author {
 	font-size: 16px;
 	margin: 0 0 16px;
+	font-style: italic;
 }
 
 #popup-content {
