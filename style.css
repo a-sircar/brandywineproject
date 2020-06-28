@@ -13,6 +13,10 @@ body {
 	height: 64px;
 }
 
+#splash, footer {
+	padding: 0 16px;
+}
+
 #photo-grid {
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
@@ -28,7 +32,6 @@ body {
 	position: relative;
 	display: block;
 	margin: 0;
-	transition: 0.2s;
 	cursor: zoom-in;
 }
 
@@ -37,6 +40,7 @@ body {
 	bottom: 16px;
 	left: 16px;
 	visibility: hidden;
+	transition: 0.2s;
 }
 
 #photo-grid figcaption h1 {
@@ -67,6 +71,7 @@ body {
 }
 
 #photo-popup {
+	transition: 0.2s;
 	display: none;
 	position: fixed;
 	z-index: 1;
@@ -181,5 +186,27 @@ footer {
 
 	#popup {
 		margin: 32px 0;
+	}
+	
+	#photo-grid figcaption {
+		transition: none;
+		position: relative;
+		visibility: visible;
+		bottom: 0;
+		left: 0;
+		margin: 0 0 8px 16px;
+	}
+
+	#photo-grid figcaption h1 {
+		color: #000;
+	}
+
+	#photo-grid figcaption div {
+		color: rgba(0, 0, 0, 0.6);
+	}
+
+	#photo-grid figure {
+		display: flex;
+		flex-direction: column-reverse;
 	}
 }

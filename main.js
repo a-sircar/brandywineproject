@@ -13,16 +13,19 @@ function closePopup() {
 	document.body.style.overflow = '';
 }
 
-document.getElementById('photo-grid').addEventListener('click', () => {
-	const target = event.path[1];
-	if (target.tagName.toLowerCase() != 'figure')
-		return;
+for (const element of document.getElementById('photo-grid').children) {
+	element.addEventListener('click', () => {
+		currentTarget = element;
+		const popup = document.getElementById('photo-popup');
 
-	document.getElementById('photo-popup').style.display = 'flex';
-	document.body.style.overflow = 'hidden';
+		popup.style.display = 'flex';
+		changeContent(element);
 
-	changeContent(target);
-});
+		if (popup.scrollHeight > popup.clientHeight) {
+			document.body.style.overflow = 'hidden';
+		}
+	});
+}
 
 document.getElementById('photo-popup').addEventListener('click', () => {
 	if (event.target.id != 'photo-popup')
